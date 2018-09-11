@@ -1,0 +1,134 @@
+<meta charset="utf-8">
+<script>
+	alert ('Задание 1');
+	var a = 1;
+	var b = 1;
+	var c;
+	var d;
+	c = ++a;
+	alert (c);
+	d = b++;
+	alert (d);
+	c = (2+ ++a);
+	alert (c);
+	d = (2+ b++);
+	alert (d);
+	alert (a);
+	alert (b);
+	alert ('Переменная с равна 2, так как это инкремент с шагом a(=1). Переменная d равна 1, так как это инкремент с шагом b(=1). Переменная с равна 5, так как 2+ равно 3, и ++а равно 2, а 3+2 = 5. Переменная d равна 4, так как 2+ равно 3, и b++ равно 1, а 3+1 = 4.  ');
+
+
+	alert ('Задание 2');
+	var a = 2;
+	var x = 1 + (a *= 2);
+	alert (x);
+
+	alert ('Задание 3');
+	var a = 5;
+	var b = -5;
+	if (a > 0, b > 0) {
+		alert (a - b);
+	}
+	else if (a < 0, b < 0) {
+		alert (a * b);
+	}
+	else {
+		alert (a + b);
+	}
+
+
+	alert ('Задание 4');
+	var f = 6;
+	switch (f) {
+		case 0:
+		alert ('0');
+		case 1:
+		alert ('1');
+		case 2:
+		alert ('2');
+		case 3:
+		alert ('3');
+		case 4:
+		alert ('4');
+		case 5:
+		alert ('5');
+		case 6:
+		alert ('6');
+		case 7:
+		alert ('7');
+		case 8:
+		alert ('8');
+		case 9:
+		alert ('9');
+		case 10:
+		alert ('10');
+		case 11:
+		alert ('11');
+		case 12:
+		alert ('12');
+		case 13:
+		alert ('13');
+		case 14:
+		alert ('14');
+		case 15:
+		alert ('15');
+		default:
+		alert (f);
+	};
+
+
+	alert ('Задание 5');
+
+	function amount (x,y) {
+		var result = x + y;
+		return result;
+	};
+
+	function difference (x,y) {
+		var result = x - y;
+		return result;
+	};
+
+	function multiply (x,y) {
+		var result = x * y;
+		return result;
+	};
+
+	function division (x,y) {
+		var result = x / y;
+		return result;
+	};
+
+	var a = amount (1,2);
+	alert (a);
+
+	var a = difference (6,4);
+	alert (a);
+
+	var a = multiply (5,5);
+	alert (a);
+
+	var a = division (10,2);
+	alert (a);
+
+
+	alert ('Задание 6');
+
+	function mathOperation (arg1, arg2, operation) {
+		if (arg1 > 0, arg2 > 0) {
+		alert (arg1 - arg2 +operation);
+	}
+	else if (arg1 < 0, arg2 < 0) {
+		alert (arg1 * arg2 +operation);
+	}
+	else {
+		alert (arg1 + arg2 +operation);
+	};
+	}
+
+	mathOperation (3,4,'разность');
+	mathOperation (-2,-5,'произведение');
+	mathOperation (-3,6,'сумма');
+
+
+</script>
