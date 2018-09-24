@@ -1,0 +1,28 @@
+
+body {
+	width: 1200px;
+	height: 1200px;
+
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+table tr td {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-size: 25px;
+}
+
+table tr td.white {
+	border: 1px solid #000000;
+	background: #ffffff;
+}
+
+table tr td.black {
+	border: 1px solid #000000;
+	background: #685050;
+}
