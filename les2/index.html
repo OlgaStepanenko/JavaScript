@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+	<ul class="list-group user-list">
+		<li class="list-group-item"> jjjjjjj</li>
+		
+	</ul>
+
+	<form action="#" class="user-form">
+					<fieldset>
+					 	<div class="form-group">
+					 		<label for="inputName">Ваше имя</label>
+					 		<input id="name" type="text" name="name" placeholder="Имя" autofocus required pattern="\S+[А-яа-я]"><em>*</em><br>
+					 	</div>
+
+					 	<div class="form-group">
+					 		<label for="inputEmail">Ваш e-mail</label>
+      						<input id="email" placeholder="email@email.com" required pattern="\S+@[a-z]+.[a-z]+"><br>
+      					</div>
+
+					 	<div class="form-group">
+					 		<label for="inputAge">Ваш возраст</label>
+      						<input id="age" type="number" placeholder="Возраст" ><em>*</em><br>
+                    	</div>
+                    	 <p><input class="push" type="submit" value="Отправить"></p>
+      				 </fieldset>
+				</form>	
+				<form class="get-user-form">
+					<div>
+						<label for="userId">Id</label>
+						<input type="text" class="form-control" id="userId" placeholder="Введите ID пользователя" name="">
+					
+				</form>
+
+	
+
+
+	<script>
+		const baseURL = 'http://89.108.65.123';
+		const inputs = [ ... document.querySelectorAll('.user-form input')];
+		const userIdInput = [document.querySelector('.get-user-form input')];
+		const userList = document.querySelector('.user-list');
+		//const [ nameInput, emailInput, ageImput ] = [... inputs ];
+		const userForm = document.querySelector('.user-form');
+		const getUserForm = document.querySelector('.get-user-form');
+		userForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const [ name, email, age ] = inputs.map(input => input.value);
+			const userObj = {
+				name,
+				email,
+				age,
+			};
+
+			
+			const xhr = new XMLHttpRequest();
+			xhr.open('POST', `${baseURL}/user`, true);
+			xhr.send(JSON.stringify(userObj));
+			xhr.onreadystechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					alert ('Пользователь ${name} создан');
+				}
+			};
+		});
+
+		getUserForm.addEventListener('submit', (e) =>{
+			e.preventDefault();
+			getUser();
+		})
+
+
+		const getUser = () => {
+			const userId = userIdImput.value;
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', `${baseURL}/user/${userID}`, true);
+			xhr.send();
+			xhr.onreadystechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					const user = JSON.parse(xhr.responseText);
+					alert ('Пользователь ${user.name} (${user.age}) - ${user.email}');
+				}
+			};
+		};
+
+
+		const getUser = () => {
+			const userId = userIdImput.value;
+			const getUsers = () => {
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', `${baseURL}/user`, true);
+			xhr.send();
+			xhr.onreadystechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					const users = JSON.parse(xhr.responseText);
+					userList.innerHTML = '';
+					users.forEach((user) => {
+						userList.innerHTML += <li class="list-group-item"> ${user.name}(${user.age}) - ${user.email}</li>;
+				})
+			}
+		};
+	};	
+
+
+
+	</script>
+</body>
+</html>
