@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+	<div class="btn-group" role="group" aria-label="Basic example">
+  		<button type="button" id="left" class="btn btn-secondary">Left</button><br>
+  			
+  		<button type="button" id="middle" class="btn btn-secondary">Middle</button>	
+  			
+  		<button type="button" id="right" class="btn btn-secondary">Right</button>
+  			
+	</div> 
+	<div class="home_text">
+  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas egestas magna, non egestas est tempor a. Proin ac purus id nisi vulputate luctus quis finibus ante. Praesent feugiat lacinia orci, id euismod ligula mattis molestie. Vestibulum quis tellus vel tellus dignissim mattis eget non nulla.</p>
+  	</div>
+  	<div class="profile_text">
+  		<p>Quisque nulla ipsum, tristique et vestibulum a, varius in sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In finibus nulla quis aliquam suscipit. Sed ut nulla vestibulum, dapibus elit faucibus, suscipit turpis. Suspendisse velit lorem, euismod tempor tincidunt vel, fringilla scelerisque magna. In congue sed est ut dapibus. Nullam tempus erat risus, fringilla euismod ex laoreet id.</p>
+  	</div>
+  	<div class="contact_text">
+  		<p>Donec sollicitudin condimentum nunc, in malesuada metus tincidunt et. Cras posuere varius nisi, vitae posuere libero molestie vel. Vivamus interdum libero quis nisl suscipit scelerisque eu eu libero. Nam nec velit non tortor vehicula vestibulum. Etiam semper eget velit nec volutpat.</p>
+  	</div>
+
+
+  	<div class="form-group">
+    <label for="Select">Example select</label>
+    <select class="form-control" id="Select">
+      
+    </select>
+  </div>
+<!-- <input class="form-control" type="text" id="list" placeholder="Введите город" autocomplete="on"> -->
+
+
+	<!--<input type="text" id="list" name=""> -->
+	
+  
+
+<!--	<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
+  	<div class="home_text">
+  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas egestas magna, non egestas est tempor a. Proin ac purus id nisi vulputate luctus quis finibus ante. Praesent feugiat lacinia orci, id euismod ligula mattis molestie. Vestibulum quis tellus vel tellus dignissim mattis eget non nulla.</p>
+  	</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  	<p class="profile_text">Quisque nulla ipsum, tristique et vestibulum a, varius in sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In finibus nulla quis aliquam suscipit. Sed ut nulla vestibulum, dapibus elit faucibus, suscipit turpis. Suspendisse velit lorem, euismod tempor tincidunt vel, fringilla scelerisque magna. In congue sed est ut dapibus. Nullam tempus erat risus, fringilla euismod ex laoreet id.</p>
+  	</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+  	<p class="contact_text">Donec sollicitudin condimentum nunc, in malesuada metus tincidunt et. Cras posuere varius nisi, vitae posuere libero molestie vel. Vivamus interdum libero quis nisl suscipit scelerisque eu eu libero. Nam nec velit non tortor vehicula vestibulum. Etiam semper eget velit nec volutpat.</p>
+  	</div>
+</div> -->
+
+
+<script>
+	$('#left').on('click', function() {
+		$(".home_text").show(1000)
+		$(".profile_text").hide(1000)
+		$(".contact_text").hide(1000)
+	})
+
+	$('#middle').on('click', function() {
+		$(".profile_text").show(1000)
+		$(".home_text").hide(1000)
+		$(".contact_text").hide(1000)
+	})
+
+
+	$('#right').on('click', function() {
+		$(".contact_text").show(1000)
+		$(".home_text").hide(1000)
+		$(".profile_text").hide(1000)
+	})
+	
+
+	//$('#home').on('click', function() {
+		//$(".home_text").show(1000)
+	//})
+
+
+  
+//$('#list').autocomplete({
+	//source: ['Санкт-Петербург', 'Москва', 'Екатеринбург', 'Новосибтрск', 'Краснодар', 'Волгоград', 'Саратов', 'Красноярск', 'Сочи', 'Воронеж', 'Владимир', 'Владивосток'],
+	//minLength: 3
+//})
+ 
+$.ajax ({
+	url: 'http://89.108.65.123',
+	type: 'GET',
+	success: function(data){
+}
+});
+
+
+	
+	for ( var i = 0; i < data.length; i++) {
+		var option = document.createElement('option');
+			option.innerHTML = data[i];
+			document.getElementById('Select').appendChild(option);
+
+		}
+	
+
+</script>
+
+
+</body>
+</html>
