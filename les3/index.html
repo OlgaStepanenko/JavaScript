@@ -8,27 +8,84 @@
     <title>Document</title>
 </head>
 <body>
-	<input type="text" id="inp" name="">
-	<span id="result"></span>
 
-<script>
-	const inp = document.querySelector('#inp');
-	const result = document.querySelector('#result');
+	<form  id="id_form">
+					<fieldset>
+					 	<div id="form_group_name">
+					 		<label for="inputName">Ваше имя</label>
+					 		<input id="name" type="text" name="name" placeholder="Имя" autofocus required ><em>*</em><br>
+					 	</div>
+
+					 	<div id="form_group_email">
+					 		<label for="inputEmail">Ваш e-mail</label>
+      						<input id="email" placeholder="email@email.com" required ><br>
+      					</div>
+
+					 	<div id="form_group_telephone">
+					 		<label for="inputTelephone">Номер телефона <em>*</em></label>
+      						<input id="telephone" placeholder="+7(000)000-0000" required><br>
+                    	</div>
+
+                    	<div id="form_group_comments">
+                    		<label for="inputComments">Дополнительная информация</label><br>
+      						<textarea id="comments"></textarea>
+                    	</div>
+                    	 <p><input class="push" type="submit" value="Отправить"></p>
+      				 </fieldset>
+				</form>	
 	
 
-	var reg = /(?<=\W)'|'(?=\W)/gi
+<script> 
 
-	//const conFig = {
-		//''  : '"',
+console.log('Задание 1 и 2');
 
-	//};
-
-	inp.addEventListener('input', () => {
-		result.innerHTML = inp.value.replace(reg, function(match, group1) {
-
-		})
-	})
+	var str = "оалшал, 'jdоврсоврс' оамвоамв воав ыовсыо`dj, dksj 'dcs' dcsc`f fdvdfv!";
+	console.log(str);
 	
+		var newstr = str.replace( /'/g,'"' );
+
+		console.log(newstr);
+
+
+console.log('Задание 3');
+
+
+function validate(form_group_name) {
+	var reg = /\S+[А-яа-я]/
+	var address = document.form(form_group_name).elements(name).value;
+
+	if (reg(address) == false) {
+		alert ('Некорректное имя');
+		return false;
+	}
+
+};
+
+
+function validate(form_group_email) {
+	var reg = /\S+@[a-2]+.[a-2]+/
+	var address = document.form(form_group_email).elements(email).value;
+
+	if (reg(address) == false) {
+		alert ('Некорректный e-mail');
+		return false;
+	}
+
+};
+
+
+function validate(form_group_telephone) {
+	var reg = /\+\d(\d{3})\d{3}-\d{4}/;
+	var address = document.form(form_group_telephone).elements(telephone).value;
+
+	if (reg(address) == false) {
+		alert ('Некорректный номер телефона');
+		return false;
+	}
+
+};
+
+
 	
 
 </script>
