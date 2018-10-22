@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div class="carusel">
+				<div class="carusel_button_left"><a href=""></a></div> 
+      			<div class="carusel_button_right"><a href=""></a></div>
+      				<div class="wrapper"> 
+      					<div class="items">
+      						<div class="carusel_photo">
+      							<img src="./img/foto1.jpg" alt="" />
+      						</div>
+      						<div class="carusel_photo">
+      							<img src="./img/foto2.jpg" alt="" />
+      						</div>
+      						<div class="carusel_photo">
+      							<img src="./img/foto3.jpg" alt="" />
+      						</div>
+      						<div class="carusel_photo">
+      							<img src="./img/foto4.jpg" alt="" />
+      						</div>
+      						<div class="carusel_photo">
+      							<img src="./img/foto5.jpg" alt="" />
+      						</div>
+      						<div class="carusel_photo">
+      							<img src="./img/foto6.jpg" alt="" />
+      						</div>
+      					</div>
+
+      				</div>
+			</div>
+		</header>
+		<main>
+			<form  id="id_form">
+					<fieldset>
+					 	<div id="form_group_name">
+					 		<label for="inputName">Ваше имя</label>
+					 		<input id="name" type="text" name="name" placeholder="Имя" autofocus required ><em>*</em><br>
+					 	</div>
+
+					 	<div id="form_group_age">
+					 		<label for="inputEmail">Ваш age</label>
+      						<input id="age" placeholder="Возраст" required ><br>
+      					</div>
+
+					 	<div id="form_group_email">
+					 		<label for="inputEmail">Ваш e-mail</label>
+      						<input id="email" placeholder="email@email.com" required ><br>
+      					</div>
+
+					 	<div id="form_group_telephone">
+					 		<label for="inputTelephone">Номер телефона <em>*</em></label>
+      						<input id="telephone" placeholder="+7(000)000-0000" required><br>
+                    	</div>
+
+                    	 <p><input class="push" type="submit" value="Отправить"></p>
+      				 </fieldset>
+			</form>	
+				<div id="dialog" title="Basic dialog"></div>
+				<div id="toggle"></div>
+
+				
+
+	<script>
+
+
+		$(document).on('click',".carusel_button_left",function(){ 
+			var carusel = $(this).parents('.carusel');
+			left_carusel(carusel);
+			return false;
+		});
+
+		$(document).on('click', ".carusel_button_right",function() { 
+			var carusel = $(this).parents('.carusel');
+			right_carusel(carusel);
+			return false;
+		});
+
+		function step_left (carusel) {
+   			var block_width = $(carusel).find('.carusel_photo').outerWidth();
+   			$(carusel).find(".items .carusel_photo").eq (-1).clone().prependTo($(carusel).find(".items")); 
+   			$(carusel).find(".items").css({"left":"-"+block_width+"px"});
+  			$(carusel).find(".items .carusel_photo").eq(-1).remove();    
+   			$(carusel).find(".items").animate({left: "0px"}, 100); 
+   		}
+
+   		function step_right (carusel) {
+   			var block_width = $(carusel).find('.carusel_photo').outerWidth();
+   			$(carusel).find(".items").animate({left: "-"+ block_width +"px"}, 100, function() {
+	  			$(carusel).find(".items .carusel_photo").eq(0).clone().appendTo($(carusel).find(".items")); 
+     			$(carusel).find(".items .carusel_photo").eq(0).remove(); 
+      			$(carusel).find(".items").css({"left":"0px"}); 
+   			}); 
+		}
+
+
+
+
+
+
+	//	$(function () {
+    		var name = $('#name'),
+        	age = $('#age'),
+       		mail = $('#email'),
+        	telephone = $('#telephone'),
+       	 	sampleName = /\S+[А-яа-я]/,
+        	sampleAge = /[0-100]/,
+        	sampleMail = /\S+@[a-2]+.[a-2]+/,
+        	sampleTelephone = /\+\d(\d{3})\d{3}-\d{4}/;
+        	$('input[type="submit"]').on('click', function () {
+        		$('#fieldsetInput').append($('<div id="dialog">'));
+
+        	if (name !=== sampleName) {
+        		$( document ) function() {
+  					$( "#toggle" ).toggle( "bounce", { times: 2 }, "slow" );
+};
+        		function dialog(elements, text) {
+        $('#dialog').dialog({'Ошибка ввода'});
+    };
+
+			if (age !=== sampleAge) {
+        		$( document ) function() {
+  					$( "#toggle" ).toggle( "bounce", { times: 2 }, "slow" );
+};
+        		function dialog(elements, text) {
+        $('#dialog').dialog({'Ошибка ввода'});
+    };
+
+			if (mail !=== sampleMail) {
+        		$( document ) function() {
+  					$( "#toggle" ).toggle( "bounce", { times: 2 }, "slow" );
+};
+        		function dialog(elements, text) {
+        $('#dialog').dialog({'Ошибка ввода'});
+    };
+
+			if (telephone !=== sampleTelephone) {
+        		$( document ) function() {
+  					$( "#toggle" ).toggle( "bounce", { times: 2 }, "slow" );
+};
+        		function dialog(elements, text) {
+        $('#dialog').dialog({'Ошибка ввода'});
+    };
+
+
+        	}	
+
+     
+
+		
+//		function validate(form_group_name) {
+//			var reg = /\S+[А-яа-я]/
+//			var address = document.form(form_group_name).elements(name).value;
+//
+//			if (reg(address) == false) {
+//				alert ('Некорректное имя');
+//				return false;
+//				}
+
+//		};
+
+
+//		function validate(form_group_email) {
+//			var reg = /\S+@[a-2]+.[a-2]+/
+//			var address = document.form(form_group_email).elements(email).value;
+//
+//			if (reg(address) == false) {
+//				alert ('Некорректный e-mail');
+//				return false;
+//				}
+
+//		};
+
+
+//		function validate(form_group_telephone) {
+//			var reg = /\+\d(\d{3})\d{3}-\d{4}/;
+//			var address = document.form(form_group_telephone).elements(telephone).value;
+
+//			if (reg(address) == false) {
+//				alert ('Некорректный номер телефона');
+//				return false;
+//				}
+//		};
+
+	</script>
+</main>
+</div>	
+</body>
+</html>
